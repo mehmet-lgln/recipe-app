@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'recipeApp';
+  parentData = 'parent data from parent component';
+  parentDataforChild = 'child data from parent component';
+  childData = ''
+
+  onPassingData($event: string){
+    this.childData = $event
+  }
 }
