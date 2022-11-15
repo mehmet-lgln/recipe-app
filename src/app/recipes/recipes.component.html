@@ -1,5 +1,12 @@
-<p>{{parentDataforChild}}</p>
-<p>recipes works!</p>
-<app-recipe-list></app-recipe-list>
-<app-recipe-detail></app-recipe-detail>
-<button (click)="passData()" >pass</button>
+
+<div class="row">
+  <div class="col-md-5">
+    <app-recipe-list (selectedRecipeP)="selectedRecipe = $event"></app-recipe-list>
+  </div>
+  <div class="col-md-7">
+    <app-recipe-detail *ngIf="selectedRecipe; else infoText" [recipe]="selectedRecipe"></app-recipe-detail>
+    <ng-template #infoText><p>please select a recipe</p></ng-template>
+
+  </div>
+</div>
+

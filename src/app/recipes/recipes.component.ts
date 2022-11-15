@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Recipe } from './recipe.model';
 
 @Component({
   selector: 'app-recipes',
@@ -7,18 +8,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
-  childDataforParent = 'parent data from child component'
-
-  @Input() parentDataforChild: string = ''
-  @Output() passingData = new EventEmitter()
+  selectedRecipe?: Recipe
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  passData(){
-    this.passingData.emit(this.childDataforParent)
-  }
 
 }
